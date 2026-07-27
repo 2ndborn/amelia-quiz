@@ -62,6 +62,7 @@ let currentData = []
 let gameEnd = false
 
 const prv = document.getElementById("prv");
+const prvWrap = document.querySelector(".prv-wrap");
 const nxt = document.getElementById("nxt");
 const h1 = document.querySelector("h1");
 const h3 = document.querySelector("h3");
@@ -73,8 +74,8 @@ const startQuiz = (quiz) => {
     h1.textContent = quiz.title
     currentData = quiz.questions
     document.getElementById("overlay").classList.add("remove")
-    shuffled = [...quiz.questions].sort(() => Math.random() - 0.5).slice(0, 5);
     // Shuffles the questions array reducing them to 5.
+    shuffled = [...quiz.questions].sort(() => Math.random() - 0.5).slice(0, 5);
     update()
 }
 
@@ -114,13 +115,14 @@ const update = () => {
     li.appendChild(label);
     ol.appendChild(li);
   })
-//   prv.classList.toggle("remove", index === 0);
+
   prv.disabled = index === 0;
+  prvWrap.classList.toggle('hidden', index === 0)
 }
 
 const checkScore = () => {
   const selected = document.querySelector("input[name='answer']:checked");
-  
+  // Selected value is converted to a number and store in userAnswer[index]
   userAnswers[index] = Number(selected.value)
   console.log(userAnswers)
 }
@@ -134,6 +136,7 @@ const calculateScore = () => {
   ol.innerHTML = ""
   score = 0
   shuffled.forEach((question, i) => {
+    // Define correct the users answer is the same as actual answer
     const correct = userAnswers[i] === question.answer
     if (correct){
       score++
