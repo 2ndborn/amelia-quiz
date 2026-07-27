@@ -48,12 +48,16 @@ body {
 
 .card {
     position: relative;
-    height: 55vh;
-    min-height: 400px;
+    height: max(55vh, 400px);
     width: 90vw;
     max-width: 600px;
+    padding: 0 1rem;
     border: 1px solid #000;
     border-radius: 15px;
+}
+
+.card h3 {
+    text-align: center;
 }
 
 .button-container {
@@ -68,6 +72,43 @@ body {
 }
 
 .button-container button {
+    position: relative;
     padding: 0.5rem 1rem;
     font-size: 1rem;
 }
+
+#nxt:disabled {
+    cursor: not-allowed;
+}
+
+#nxt:not(:disabled) {
+    cursor: pointer;
+}
+
+ol {
+    padding-left: 0;
+    margin: 0;
+}
+
+.options {
+    list-style-type: none;
+    min-height: 60px;
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+
+.options label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.options input[type="radio"] {
+    margin-right: 12px;
+}
+
