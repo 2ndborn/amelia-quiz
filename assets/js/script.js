@@ -3,7 +3,7 @@ const geography = {
     questions: [
         {
             question: "What is the capital of Jamaica?",
-            options: ["Kingson", "St. James", "Montego Bay", "St. Elizabeth"],
+            options: ["Kingston", "St. James", "Montego Bay", "St. Elizabeth"],
             answer: 0
         },
         {
@@ -65,7 +65,7 @@ const prv = document.getElementById("prv");
 const prvWrap = document.querySelector(".prv-wrap");
 const nxt = document.getElementById("nxt");
 const h1 = document.querySelector("h1");
-const h3 = document.querySelector("h3");
+const h2 = document.querySelector("h2");
 const ol = document.querySelector("ol");
 const span = document.createElement("span");
 span.textContent = score
@@ -92,18 +92,20 @@ const replay = () => {
 }
 
 const update = () => {
-  h3.textContent = `${index + 1}. ${shuffled[index].question}`;
+  h2.textContent = `${index + 1}. ${shuffled[index].question}`;
   ol.innerHTML = ""
 
   nxt.disabled = true;
   shuffled[index].options.forEach((opt, i) => {
     const li = document.createElement("li");
     li.classList.add("options")
-    const input = document.createElement("input");
     const label = document.createElement("label");
+    const input = document.createElement("input");
     input.type = "radio"
     input.name = "answer"
     input.value = i
+    const span = document.createElement("span");
+    span.textContent = opt
 
     // listens for when an option has been check and disables the next button
     input.addEventListener("change", () => {
@@ -111,7 +113,7 @@ const update = () => {
       nxt.disabled = !checked
     })
 
-    label.append(input, ` ${opt}`);
+    label.append(input, span);
     li.appendChild(label);
     ol.appendChild(li);
   })
