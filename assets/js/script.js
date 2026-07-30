@@ -67,8 +67,8 @@ const nxt = document.getElementById("nxt");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
 const ol = document.querySelector("ol");
-const span = document.createElement("span");
-span.textContent = score
+const scoreSpan = document.createElement("span");
+// scoreSpan.textContent = score
 
 const startQuiz = (quiz) => {
     h1.textContent = quiz.title
@@ -104,16 +104,22 @@ const update = () => {
     input.type = "radio"
     input.name = "answer"
     input.value = i
-    const span = document.createElement("span");
-    span.textContent = opt
+    const text = document.createElement("span");
+    text.textContent = opt
 
+    if(userAnswers[index] === i) {
+      input.checked = true
+      nxt.disabled = false
+    }
     // listens for when an option has been check and disables the next button
     input.addEventListener("change", () => {
-      const checked = document.querySelector("input[type='radio']:checked")
-      nxt.disabled = !checked
+      userAnswers[index] = i
+      nxt.disabled = false
+      // const checked = document.querySelector("input[type='radio']:checked")
+      // nxt.disabled = !checked
     })
-
-    label.append(input, span);
+    console.log("userAnswers", userAnswers)
+    label.append(input, text);
     li.appendChild(label);
     ol.appendChild(li);
   })
@@ -122,17 +128,17 @@ const update = () => {
   prvWrap.classList.toggle('hidden', index === 0)
 }
 
-const checkScore = () => {
-  const selected = document.querySelector("input[name='answer']:checked");
-  // Selected value is converted to a number and store in userAnswer[index]
-  userAnswers[index] = Number(selected.value)
-  console.log(userAnswers)
-}
+// const checkScore = () => {
+//   const selected = document.querySelector("input[name='answer']:checked");
+//   // Selected value is converted to a number and store in userAnswer[index]
+//   userAnswers[index] = Number(selected.value)
+//   // console.log("X", userAnswers)
+// }
 
 const calculateScore = () => {
   gameEnd = true
   
-  prv.style.display = "none";
+  prvWrap.classList.add('hidden')
   nxt.textContent = "Replay";
 
   ol.innerHTML = ""
@@ -150,12 +156,14 @@ const calculateScore = () => {
     li.style.color = correct ? "green" : "red"
   })
   h2.textContent = `Quiz Complete!`;
-  span.textContent = `Score: ${score}/${shuffled.length}`;
+  scoreSpan.textContent = `You scored ${score}/${shuffled.length}.`;
+  scoreSpan.style.color = "#fff"
+  h2.after(scoreSpan)
 }
 
 prv.addEventListener("click", () => {
   if (gameEnd) {
-    prv.style.display = "none"
+    prvWrap.classList.add('hidden')
   }
   if (index > 0){
     index--
@@ -168,7 +176,7 @@ nxt.addEventListener("click", () => {
     replay()
     return
   }
-  checkScore()
+  // checkScore()
   if (index < shuffled.length - 1){
     index++
     update()
