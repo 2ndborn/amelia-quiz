@@ -105,6 +105,7 @@ body {
     position: relative;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    width: 90px;
 }
 
 #nxt:disabled {
@@ -116,10 +117,11 @@ body {
 }
 
 .prv-wrap {
-    width: 80px;  /* button width */
+    width: 100px;  /* button width */
     overflow: hidden;
     transition: width 0.5s ease;
     transform: 1s ease;
+
 }
 
 .prv-wrap.hidden {
@@ -142,7 +144,7 @@ body {
 }
 
 ol {
-    width: fit-content;
+    /* width: fit-content; */
     padding-left: 0;
     margin: 0 auto;
 }
@@ -208,4 +210,13 @@ ol {
     backdrop-filter: blur(20px);
 }
 
- 
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+/* 
+.hidden {
+    display: none !important;
+} */

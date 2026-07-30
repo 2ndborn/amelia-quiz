@@ -62,13 +62,13 @@ let currentData = []
 let gameEnd = false
 
 const prv = document.getElementById("prv");
+const result = document.getElementById("result");
 const prvWrap = document.querySelector(".prv-wrap");
 const nxt = document.getElementById("nxt");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
-const ol = document.querySelector("ol");
+const quiz = document.getElementById("quiz");
 const scoreSpan = document.createElement("span");
-// scoreSpan.textContent = score
 
 const startQuiz = (quiz) => {
     h1.textContent = quiz.title
@@ -82,10 +82,17 @@ const startQuiz = (quiz) => {
 // Let the user replay the same subject instead of going back to home
 const replay = () => {
     index = 0;
+    score = 0;
     userAnswers = [];
     gameEnd = false;
 
-    prv.style.display = "block"
+    quiz.hidden = false
+    result.hidden = true
+    console.log(result.hidden)
+
+    result.innerHTML = ""
+    prv.textContent = "Prev"
+    // prv.style.display = "block"
     nxt.textContent = "Next"
     shuffled = [...currentData].sort(() => Math.random() - 0.5).slice(0, 5);
     update();
@@ -93,7 +100,7 @@ const replay = () => {
 
 const update = () => {
   h2.textContent = `${index + 1}. ${shuffled[index].question}`;
-  ol.innerHTML = ""
+  quiz.innerHTML = ""
 
   nxt.disabled = true;
   shuffled[index].options.forEach((opt, i) => {
@@ -121,7 +128,7 @@ const update = () => {
     console.log("userAnswers", userAnswers)
     label.append(input, text);
     li.appendChild(label);
-    ol.appendChild(li);
+    quiz.appendChild(li);
   })
 
   prv.disabled = index === 0;
@@ -137,33 +144,42 @@ const update = () => {
 
 const calculateScore = () => {
   gameEnd = true
+  prvWrap.classList.remove("hidden");
+  prv.textContent = "Home"
   
-  prvWrap.classList.add('hidden')
+  // prvWrap.classList.add('hidden')
   nxt.textContent = "Replay";
 
-  ol.innerHTML = ""
+  // ol.innerHTML = ""
+  quiz.hidden = true
+  result.hidden = false
+
   score = 0
   shuffled.forEach((question, i) => {
-    // Define correct the users answer is the same as actual answer
+    // Correct answer increments score
     const correct = userAnswers[i] === question.answer
     if (correct){
       score++
     }
-    const li = document.createElement("li");
-    li.textContent = `${question.question} - 
+
+    const p = document.createElement("p");
+    p.textContent = `${question.question} - 
     ${correct ? "Correct": "Incorrect"}`
-    ol.appendChild(li);
-    li.style.color = correct ? "green" : "red"
+    result.appendChild(p);
+    p.style.color = correct ? "green" : "red"
+    p.style.margin = "10px 0"
   })
   h2.textContent = `Quiz Complete!`;
-  scoreSpan.textContent = `You scored ${score}/${shuffled.length}.`;
-  scoreSpan.style.color = "#fff"
-  h2.after(scoreSpan)
+  const scoreHead = document.createElement("h3");
+  scoreHead.textContent = `You scored ${score}/${shuffled.length}.`
+  scoreHead.style.color = "#fff"
+  scoreHead.style.margin = "16px 0"
+  result.prepend(scoreHead)
 }
 
 prv.addEventListener("click", () => {
   if (gameEnd) {
-    prvWrap.classList.add('hidden')
+    location.reload()
   }
   if (index > 0){
     index--
