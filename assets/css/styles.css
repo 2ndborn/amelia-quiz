@@ -230,7 +230,13 @@ ol {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: justify;
 } 
+
+table {
+    width: 60%;
+    font-size: 1.1rem;
+}
 /* 
 .hidden {
     display: none !important;

@@ -65,9 +65,11 @@ const prv = document.getElementById("prv");
 const result = document.getElementById("result");
 const prvWrap = document.querySelector(".prv-wrap");
 const nxt = document.getElementById("nxt");
+const resultBody = document.getElementById("result-body");
 const card = document.querySelector(".card");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
+const table = document.querySelector("table");
 const quiz = document.getElementById("quiz");
 const scoreSpan = document.createElement("span");
 
@@ -91,7 +93,9 @@ const replay = () => {
     result.hidden = true
     console.log(result.hidden)
 
-    result.innerHTML = ""
+    resultBody.innerHTML = ""
+    document.getElementById("score-head").textContent = "";
+
     prv.textContent = "Prev"
     // prv.style.display = "block"
     nxt.textContent = "Next"
@@ -154,6 +158,7 @@ const calculateScore = () => {
   // ol.innerHTML = ""
   quiz.hidden = true
   result.hidden = false
+  // table.innerHTML = ""
 
   score = 0
   shuffled.forEach((question, i) => {
@@ -163,15 +168,26 @@ const calculateScore = () => {
       score++
     }
 
-    const p = document.createElement("p");
-    p.textContent = `${question.question} - 
-    ${correct ? "Correct": "Incorrect"}`
-    result.appendChild(p);
-    p.style.color = correct ? "green" : "red"
-    p.style.margin = "10px 0"
+    const tr = document.createElement("tr");
+    const colOne = document.createElement("td");
+    const colTwo = document.createElement("td");
+    colOne.textContent = `${i + 1}. ${question.question}`
+    colTwo.textContent = `${correct ? "Correct": "Incorrect"}`
+    colOne.style.color = correct ? "green" : "red";
+    colTwo.style.color = correct ? "green" : "red";
+    colTwo.style.textAlign = "right";
+    resultBody.appendChild(tr)
+    tr.append(colOne, colTwo)
+
+    // const p = document.createElement("p");
+    // p.textContent = `${question.question} - 
+    // ${correct ? "Correct": "Incorrect"}`
+    // result.appendChild(p);
+    // p.style.color = correct ? "green" : "red"
+    // p.style.margin = "10px 0"
   })
   h2.textContent = `Quiz Complete!`;
-  const scoreHead = document.createElement("h3");
+  const scoreHead = document.getElementById("score-head");
   scoreHead.textContent = `You scored ${score}/${shuffled.length}.`
   scoreHead.style.color = "#fff"
   scoreHead.style.margin = "16px 0"
