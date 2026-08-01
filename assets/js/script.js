@@ -65,6 +65,7 @@ const prv = document.getElementById("prv");
 const result = document.getElementById("result");
 const prvWrap = document.querySelector(".prv-wrap");
 const nxt = document.getElementById("nxt");
+const card = document.querySelector(".card");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
 const quiz = document.getElementById("quiz");
@@ -188,6 +189,13 @@ prv.addEventListener("click", () => {
 })
 
 nxt.addEventListener("click", () => {
+    nxt.classList.add("flash")
+    card.classList.add("flash")
+  setTimeout(() => {
+    nxt.classList.remove("flash")
+    card.classList.remove("flash")
+  }, 250);
+
   if (gameEnd) {
     replay()
     return

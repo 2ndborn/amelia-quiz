@@ -85,6 +85,10 @@ body {
     border-radius: 15px;
 }
 
+.card.flash {
+    border: 2px solid #e018b5;
+}
+
 .card h2 {
     text-align: center;
     color: #fff;
@@ -106,10 +110,20 @@ body {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     width: 90px;
+    color: #5c2581;
+    background-color: #FAFAFF;
+    border: 2px solid #5c2581;
+    border-radius: 5px;
+}
+
+#nxt.flash {
+    border: 1px solid #e018b5ab;
+    color: #e018b5;
 }
 
 #nxt:disabled {
     cursor: not-allowed;
+    background-color: #fafaff33;
 }
 
 #nxt:not(:disabled) {
@@ -191,6 +205,7 @@ ol {
 .options input[type="radio"] {
     flex-shrink: 0;
     margin-left: 1rem;
+    accent-color: #e018b5;
 }
 
 
