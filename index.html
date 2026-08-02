@@ -6,11 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/styles.css" type="text/css">
     <link rel="stylesheet" href="./assets/js/script.js" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/23e3b6457b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="overlay">
-        <button id="startBtn" onclick="startQuiz(geography)"><i class="fa-solid fa-earth-africa"></i></button>
+        <div class="choice-container">
+            <button id="startBtn" onclick="loadQuiz('geography')"><i class="fa-solid fa-earth-africa"></i></button>
+        </div>
     </div>
     <div class="title">
         <h1>Title</h1>
@@ -37,5 +43,6 @@
     </div>
     <div class="footer"></div>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </body>
 </html>

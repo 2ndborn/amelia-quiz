@@ -1,0 +1,445 @@
+{
+  "title": "Geography",
+  "questions": [
+    {
+      "question": "What causes earthquakes?",
+      "options": [
+        "Plate movement",
+        "Evaporation",
+        "Photosynthesis",
+        "Ocean currents"
+      ],
+      "answer": "Plate movement"
+    },
+    {
+      "question": "How do tectonic plates differ at destructive boundaries?",
+      "options": [
+        "They collide",
+        "They move apart",
+        "They slide slowly inland",
+        "They stop moving"
+      ],
+      "answer": "They collide"
+    },
+    {
+      "question": "What causes tropical storms?",
+      "options": [
+        "Warm ocean water",
+        "Cold deserts",
+        "River flooding",
+        "Mountain formation"
+      ],
+      "answer": "Warm ocean water"
+    },
+    {
+      "question": "What is a major effect of climate change?",
+      "options": [
+        "Rising temperatures",
+        "Less gravity",
+        "Smaller oceans",
+        "Fewer seasons"
+      ],
+      "answer": "Rising temperatures"
+    },
+    {
+      "question": "Which weather event is considered extreme?",
+      "options": [
+        "Heatwave",
+        "Mild breeze",
+        "Cloudy day",
+        "Light dew"
+      ],
+      "answer": "Heatwave"
+    },
+    {
+      "question": "What is an ecosystem?",
+      "options": [
+        "Living organisms and their environment",
+        "A single species",
+        "A weather map",
+        "A mountain range"
+      ],
+      "answer": "Living organisms and their environment"
+    },
+    {
+      "question": "What cycle operates within ecosystems?",
+      "options": [
+        "Nutrient cycle",
+        "Trade cycle",
+        "Traffic cycle",
+        "Tourism cycle"
+      ],
+      "answer": "Nutrient cycle"
+    },
+    {
+      "question": "Biotic components are?",
+      "options": [
+        "Living parts",
+        "Non-living rocks only",
+        "Clouds only",
+        "Water only"
+      ],
+      "answer": "Living parts"
+    },
+    {
+      "question": "Why are ecosystems interdependent?",
+      "options": [
+        "Parts rely on each other",
+        "They never change",
+        "They exist alone",
+        "Only animals matter"
+      ],
+      "answer": "Parts rely on each other"
+    },
+    {
+      "question": "Where are tropical rainforests mainly found?",
+      "options": [
+        "Near the Equator",
+        "Near the poles",
+        "In deserts",
+        "On glaciers"
+      ],
+      "answer": "Near the Equator"
+    },
+    {
+      "question": "What threatens rainforests most?",
+      "options": [
+        "Deforestation",
+        "Snowfall",
+        "Tides",
+        "Earthquakes"
+      ],
+      "answer": "Deforestation"
+    },
+    {
+      "question": "A key impact of deforestation is?",
+      "options": [
+        "Loss of biodiversity",
+        "More glaciers",
+        "Lower sea level",
+        "Fewer rivers"
+      ],
+      "answer": "Loss of biodiversity"
+    },
+    {
+      "question": "One rainforest management strategy is?",
+      "options": [
+        "Selective logging",
+        "Clear felling all trees",
+        "Paving forests",
+        "Removing wildlife"
+      ],
+      "answer": "Selective logging"
+    },
+    {
+      "question": "Hot deserts receive?",
+      "options": [
+        "Low rainfall",
+        "Heavy rainfall",
+        "Daily snow",
+        "Constant flooding"
+      ],
+      "answer": "Low rainfall"
+    },
+    {
+      "question": "Desert plants survive by?",
+      "options": [
+        "Conserving water",
+        "Growing underwater",
+        "Needing frost",
+        "Depending on rivers"
+      ],
+      "answer": "Conserving water"
+    },
+    {
+      "question": "A desert opportunity is?",
+      "options": [
+        "Tourism",
+        "Glacier farming",
+        "Deep sea fishing",
+        "Tidal power only"
+      ],
+      "answer": "Tourism"
+    },
+    {
+      "question": "A desert challenge is?",
+      "options": [
+        "Water shortages",
+        "Excess rainfall",
+        "Dense forests",
+        "Frequent blizzards"
+      ],
+      "answer": "Water shortages"
+    },
+    {
+      "question": "Waterfalls form due to?",
+      "options": [
+        "Differential erosion",
+        "Longshore drift",
+        "Plate collision",
+        "Urbanisation"
+      ],
+      "answer": "Differential erosion"
+    },
+    {
+      "question": "What is a meander?",
+      "options": [
+        "River bend",
+        "Coastal arch",
+        "Sand dune",
+        "Volcano crater"
+      ],
+      "answer": "River bend"
+    },
+    {
+      "question": "Flooding can be caused by?",
+      "options": [
+        "Heavy rainfall",
+        "Low clouds",
+        "Moonlight",
+        "Earth rotation"
+      ],
+      "answer": "Heavy rainfall"
+    },
+    {
+      "question": "Hard engineering includes?",
+      "options": [
+        "Dams",
+        "Flood warnings",
+        "Afforestation",
+        "River walks"
+      ],
+      "answer": "Dams"
+    },
+    {
+      "question": "Longshore drift moves?",
+      "options": [
+        "Sediment along the coast",
+        "Rain inland",
+        "Tectonic plates",
+        "River water upstream"
+      ],
+      "answer": "Sediment along the coast"
+    },
+    {
+      "question": "An arch may collapse into a?",
+      "options": [
+        "Stack",
+        "Levee",
+        "Delta",
+        "Meander"
+      ],
+      "answer": "Stack"
+    },
+    {
+      "question": "Coastal erosion is increased by?",
+      "options": [
+        "Powerful waves",
+        "Low population",
+        "Cold nights",
+        "Short rivers"
+      ],
+      "answer": "Powerful waves"
+    },
+    {
+      "question": "Sea walls are a type of?",
+      "options": [
+        "Coastal management",
+        "Volcano management",
+        "Urban planning",
+        "Forest management"
+      ],
+      "answer": "Coastal management"
+    },
+    {
+      "question": "Food security means?",
+      "options": [
+        "Reliable access to food",
+        "Cheap holidays",
+        "Fast transport",
+        "More rainfall"
+      ],
+      "answer": "Reliable access to food"
+    },
+    {
+      "question": "Food supplies are threatened by?",
+      "options": [
+        "Climate change",
+        "Gravity",
+        "Longitude",
+        "Time zones"
+      ],
+      "answer": "Climate change"
+    },
+    {
+      "question": "One way to increase food security is?",
+      "options": [
+        "Appropriate technology",
+        "Removing farms",
+        "Reducing crops",
+        "Ban irrigation"
+      ],
+      "answer": "Appropriate technology"
+    },
+    {
+      "question": "Water is important because?",
+      "options": [
+        "People need it to live",
+        "It causes earthquakes",
+        "It stops erosion",
+        "It creates deserts"
+      ],
+      "answer": "People need it to live"
+    },
+    {
+      "question": "Water shortages can result from?",
+      "options": [
+        "Drought",
+        "Moon phases",
+        "Cloud shapes",
+        "Ocean tides"
+      ],
+      "answer": "Drought"
+    },
+    {
+      "question": "Sustainable water management aims to?",
+      "options": [
+        "Protect future supplies",
+        "Waste water",
+        "Reduce rainfall",
+        "Remove rivers"
+      ],
+      "answer": "Protect future supplies"
+    },
+    {
+      "question": "Urbanisation is?",
+      "options": [
+        "Growth of towns and cities",
+        "Forest growth",
+        "Desert expansion",
+        "Mountain building"
+      ],
+      "answer": "Growth of towns and cities"
+    },
+    {
+      "question": "A megacity has over?",
+      "options": [
+        "10 million people",
+        "100 thousand people",
+        "1 million people",
+        "50 thousand people"
+      ],
+      "answer": "10 million people"
+    },
+    {
+      "question": "A challenge of rapid urban growth is?",
+      "options": [
+        "Housing shortages",
+        "Too many forests",
+        "Fewer jobs always",
+        "Less traffic always"
+      ],
+      "answer": "Housing shortages"
+    },
+    {
+      "question": "Sustainable urban living focuses on?",
+      "options": [
+        "Long-term improvements",
+        "Removing services",
+        "More pollution",
+        "Ignoring waste"
+      ],
+      "answer": "Long-term improvements"
+    },
+    {
+      "question": "NEE stands for?",
+      "options": [
+        "Newly Emerging Economy",
+        "National Economic Enterprise",
+        "Northern European Economy",
+        "New Energy Exporter"
+      ],
+      "answer": "Newly Emerging Economy"
+    },
+    {
+      "question": "AQA commonly studies which NEE?",
+      "options": [
+        "Nigeria",
+        "Norway",
+        "Canada",
+        "Switzerland"
+      ],
+      "answer": "Nigeria"
+    },
+    {
+      "question": "A TNC is a?",
+      "options": [
+        "Transnational corporation",
+        "Tourism network centre",
+        "Trade navigation company",
+        "Transport node centre"
+      ],
+      "answer": "Transnational corporation"
+    },
+    {
+      "question": "Economic development can improve?",
+      "options": [
+        "Quality of life",
+        "Earthquake frequency",
+        "Plate movement",
+        "Sea temperature"
+      ],
+      "answer": "Quality of life"
+    },
+    {
+      "question": "Reducing the development gap helps?",
+      "options": [
+        "Poorer countries develop",
+        "Create deserts",
+        "Increase erosion",
+        "Reduce rivers"
+      ],
+      "answer": "Poorer countries develop"
+    },
+    {
+      "question": "Fieldwork helps geographers?",
+      "options": [
+        "Collect primary data",
+        "Predict the future",
+        "Stop storms",
+        "Move rivers"
+      ],
+      "answer": "Collect primary data"
+    },
+    {
+      "question": "River fieldwork may measure?",
+      "options": [
+        "Velocity",
+        "Earthquake depth",
+        "Traffic flow only",
+        "Wind chill only"
+      ],
+      "answer": "Velocity"
+    },
+    {
+      "question": "Urban fieldwork often investigates?",
+      "options": [
+        "Land use",
+        "Volcanoes",
+        "Coral reefs",
+        "Glaciers"
+      ],
+      "answer": "Land use"
+    },
+    {
+      "question": "Reliable data is data that is?",
+      "options": [
+        "Trustworthy and consistent",
+        "Random",
+        "Always old",
+        "Untested"
+      ],
+      "answer": "Trustworthy and consistent"
+    }
+  ]
+}

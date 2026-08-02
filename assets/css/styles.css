@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: rgb(34, 32, 32);
+    font-family: "Roboto", sans-serif;
 }
 
 #overlay {
@@ -21,6 +22,17 @@ body {
 #overlay button {
     padding: 2rem;
     font-size: 3rem;
+}
+
+.choice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: min(600px, 85vw);
+    /* background-color: #fff; */
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .title {
@@ -234,8 +246,8 @@ ol {
 } 
 
 table {
-    width: 60%;
-    font-size: 1.1rem;
+    width: 90%;
+    font-size: clamp(0.75rem, 0.623rem + 0.64vw, 1.1rem);
 }
 /* 
 .hidden {

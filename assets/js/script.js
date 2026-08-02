@@ -66,19 +66,35 @@ const result = document.getElementById("result");
 const prvWrap = document.querySelector(".prv-wrap");
 const nxt = document.getElementById("nxt");
 const resultBody = document.getElementById("result-body");
+const scoreHead = document.getElementById("score-head");
 const card = document.querySelector(".card");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
-const table = document.querySelector("table");
 const quiz = document.getElementById("quiz");
-const scoreSpan = document.createElement("span");
+
+async function loadQuiz(subject) {
+  const response = await fetch("./data/geography.json");
+  const quiz = await response.json()
+
+  startQuiz(quiz)
+}
+
+const shuffleArray = (arr) => {
+  return [...arr].sort(() => Math.random() - 0.5);
+};
 
 const startQuiz = (quiz) => {
     h1.textContent = quiz.title
     currentData = quiz.questions
     document.getElementById("overlay").classList.add("remove")
     // Shuffles the questions array reducing them to 5.
-    shuffled = [...quiz.questions].sort(() => Math.random() - 0.5).slice(0, 5);
+    shuffled = [...quiz.questions]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5)
+    .map(question => ({
+      ...question,
+      options: shuffleArray(question.options)
+    }))
     update()
 }
 
@@ -91,10 +107,9 @@ const replay = () => {
 
     quiz.hidden = false
     result.hidden = true
-    console.log(result.hidden)
 
     resultBody.innerHTML = ""
-    document.getElementById("score-head").textContent = "";
+    scoreHead.textContent = "";
 
     prv.textContent = "Prev"
     // prv.style.display = "block"
@@ -119,16 +134,14 @@ const update = () => {
     const text = document.createElement("span");
     text.textContent = opt
 
-    if(userAnswers[index] === i) {
+    if(userAnswers[index] === opt) {
       input.checked = true
       nxt.disabled = false
     }
     // listens for when an option has been check and disables the next button
     input.addEventListener("change", () => {
-      userAnswers[index] = i
+      userAnswers[index] = opt
       nxt.disabled = false
-      // const checked = document.querySelector("input[type='radio']:checked")
-      // nxt.disabled = !checked
     })
     console.log("userAnswers", userAnswers)
     label.append(input, text);
@@ -140,25 +153,15 @@ const update = () => {
   prvWrap.classList.toggle('hidden', index === 0)
 }
 
-// const checkScore = () => {
-//   const selected = document.querySelector("input[name='answer']:checked");
-//   // Selected value is converted to a number and store in userAnswer[index]
-//   userAnswers[index] = Number(selected.value)
-//   // console.log("X", userAnswers)
-// }
-
 const calculateScore = () => {
   gameEnd = true
   prvWrap.classList.remove("hidden");
   prv.textContent = "Home"
   
-  // prvWrap.classList.add('hidden')
   nxt.textContent = "Replay";
 
-  // ol.innerHTML = ""
   quiz.hidden = true
   result.hidden = false
-  // table.innerHTML = ""
 
   score = 0
   shuffled.forEach((question, i) => {
@@ -173,25 +176,28 @@ const calculateScore = () => {
     const colTwo = document.createElement("td");
     colOne.textContent = `${i + 1}. ${question.question}`
     colTwo.textContent = `${correct ? "Correct": "Incorrect"}`
-    colOne.style.color = correct ? "green" : "red";
-    colTwo.style.color = correct ? "green" : "red";
+    colOne.style.color = correct ? "greenyellow" : "red";
+    colTwo.style.color = correct ? "greenyellow" : "red";
     colTwo.style.textAlign = "right";
     resultBody.appendChild(tr)
     tr.append(colOne, colTwo)
-
-    // const p = document.createElement("p");
-    // p.textContent = `${question.question} - 
-    // ${correct ? "Correct": "Incorrect"}`
-    // result.appendChild(p);
-    // p.style.color = correct ? "green" : "red"
-    // p.style.margin = "10px 0"
   })
+  
+  const allCorrect = score === shuffled.length
+  const percentage = (score / shuffled.length) * 100
   h2.textContent = `Quiz Complete!`;
-  const scoreHead = document.getElementById("score-head");
-  scoreHead.textContent = `You scored ${score}/${shuffled.length}.`
+  scoreHead.textContent = allCorrect ? `Perfect Score!!!` : `You scored ${score}/${shuffled.length}.`
   scoreHead.style.color = "#fff"
   scoreHead.style.margin = "16px 0"
   result.prepend(scoreHead)
+  
+  if (percentage >= 80) {
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
+  }
 }
 
 prv.addEventListener("click", () => {
@@ -216,7 +222,6 @@ nxt.addEventListener("click", () => {
     replay()
     return
   }
-  // checkScore()
   if (index < shuffled.length - 1){
     index++
     update()
