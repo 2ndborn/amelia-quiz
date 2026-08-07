@@ -72,6 +72,8 @@ const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
 const quiz = document.getElementById("quiz");
 
+document.addEventListener("DOMContentLoaded")
+
 async function loadQuiz(subject) {
   const response = await fetch("./data/geography.json");
   const quiz = await response.json()
