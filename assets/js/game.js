@@ -15,6 +15,7 @@ const card = document.querySelector(".card");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
 const quiz = document.getElementById("quiz");
+const homeBtn = document.querySelector("#home a")
 
 const params = new URLSearchParams(window.location.search);
 const quizName = params.get("quiz");
@@ -179,3 +180,11 @@ nxt.addEventListener("click", () => {
     calculateScore()
   }
 })
+
+// homeBtn.addEventListener("mouseover", () => {
+//     homeBtn.textContent = "Home"
+// })
+
+// homeBtn.addEventListener("mouseout", () => {
+//     homeBtn.innerHTML = <i class="fa-solid fa-house"></i>
+// })

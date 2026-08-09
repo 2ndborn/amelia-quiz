@@ -1,8 +1,7 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const paths = document.querySelectorAll(".logo path");
   const games = document.querySelectorAll(".choice-container a");
+  const para = document.querySelector("#overlay p");
 
   const animationPromises = [];
 
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    const promise = draw.finished.then(() => {
+    const promise = draw.finished.then(async () => {
       const fill = path.animate(
         [
           { fillOpacity: 0 },
@@ -40,32 +39,64 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-      return fill.finished;
+      await fill.finished;
     });
 
     animationPromises.push(promise);
   });
 
-  Promise.all(animationPromises).then(() => {
-    games.forEach((game, i) => {
-      game.animate(
+  Promise.all(animationPromises).then(async () => {
+    const shadowPromises = [...paths].map(path =>
+      path.animate(
         [
-          {
-            opacity: 0,
-            transform: "translateY(20px)"
-          },
-          {
-            opacity: 1,
-            transform: "translateY(0)"
-          }
+          { filter: "drop-shadow(0 0 0 transparent)" },
+          { filter: "drop-shadow(1px 5px 24px rgba(203, 73, 230, 0.8))" }
         ],
         {
-          duration: 500,
-          delay: i * 200,
-          fill: "forwards",
-          easing: "ease"
+          duration: 1000,
+          fill: "forwards"
+        }
+      ).finished
+    );
+    await Promise.all(shadowPromises);
+
+    for (const [i, game] of games.entries()) {
+
+      const btns = game.animate(
+        [
+          { opacity: 0, transform: "translateY(20px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ],
+        {
+          duration: 300,
+          fill: "forwards"
         }
       );
-    });
+
+      await btns.finished;
+
+      const shadow = game.animate(
+        [
+          { boxShadow: "0 0 0 transparent" },
+          { boxShadow: "1px 5px 24px -2px rgba(203, 73, 230, 0.8)" }
+        ],
+        {
+          duration: 300,
+          fill: "forwards"
+        }
+      );
+
+      await shadow.finished;
+    }
+    para.animate(
+      [
+        { opacity: "0" },
+        { opacity: "1" }
+      ],
+      {
+        duration: 300,
+        fill: "forwards"
+      }
+    )
   });
 });
