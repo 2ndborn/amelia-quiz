@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", () => {
       clickSound.currentTime = 0;
       clickSound.play();
+      console.log("clicked")
     });
   });
 });

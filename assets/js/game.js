@@ -15,7 +15,10 @@ const card = document.querySelector(".card");
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
 const quiz = document.getElementById("quiz");
-const homeBtn = document.querySelector("#home a")
+const homeBtn = document.querySelector("#home a");
+const clkSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3')
+const liSound = new Audio('/assets/audio/ksjsbwuil-digital-click-3-513897.mp3')
+const finSound = new Audio('/assets/audio/dragon-studio-crowd-cheer-and-applause-406644 (1).mp3')
 
 const params = new URLSearchParams(window.location.search);
 const quizName = params.get("quiz");
@@ -34,6 +37,11 @@ async function loadQuiz(subject) {
 const shuffleArray = (arr) => {
   return [...arr].sort(() => Math.random() - 0.5);
 };
+
+const sound = (snd) => {
+  snd.currentTime = 0
+  snd.play();
+}
 
 const startQuiz = (quiz) => {
     h1.textContent = quiz.title
@@ -98,6 +106,8 @@ const update = () => {
     label.append(input, text);
     li.appendChild(label);
     quiz.appendChild(li);
+
+    li.addEventListener("click", () => sound(liSound))
   })
 
   prv.disabled = index === 0;
@@ -143,6 +153,7 @@ const calculateScore = () => {
   result.prepend(scoreHead)
   
   if (percentage >= 80) {
+    sound(finSound)
     confetti({
       particleCount: 150,
       spread: 100,
@@ -153,7 +164,7 @@ const calculateScore = () => {
 
 prv.addEventListener("click", () => {
   if (gameEnd) {
-    location.reload()
+    location.href = "index.html"
   }
   if (index > 0){
     index--
@@ -179,6 +190,10 @@ nxt.addEventListener("click", () => {
   } else {
     calculateScore()
   }
+})
+
+const buttons = document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", () => sound(clkSound))
 })
 
 // homeBtn.addEventListener("mouseover", () => {
