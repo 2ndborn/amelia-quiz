@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const paths = document.querySelectorAll(".logo path");
   const games = document.querySelectorAll(".choice-container a");
   const para = document.querySelector("#overlay p");
+  const links = document.querySelectorAll("a");
+  const clickSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3')
 
   const animationPromises = [];
 
@@ -98,5 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
         fill: "forwards"
       }
     )
+  });
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      clickSound.currentTime = 0;
+      clickSound.play();
+    });
   });
 });
