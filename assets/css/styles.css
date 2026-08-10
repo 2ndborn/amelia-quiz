@@ -19,7 +19,7 @@ body {
 }
 
 #overlay p {
-    color: aliceblue;
+    color: #f0f8ff;
     opacity: 0;
 }
 
@@ -59,7 +59,7 @@ body {
     align-items: center;
     width: 120px;
     height: 120px;
-    background: white;
+    background: f0f8ff;
     color: #5c2581;
     text-decoration: none;
     font-size: 3rem;
@@ -82,12 +82,11 @@ body {
     left: 10px;
     top: 10px;
     min-height: 30px;
-    /* line-height: 30px; */
     font-weight: 600;
-    background-color: #fff;
+    background-color: #f0f8ff;
     padding: 5px 5px;
     border-radius: 3px;
-    box-shadow: 2px 2px 10px 0px rgba(203, 73, 230, 0.8);
+    box-shadow: 2px 2px 10px 0px #e018b5;
 }
 
 #home a {
@@ -105,7 +104,7 @@ body {
 
 .title h1 {
     margin: 0;
-    color: #fff;
+    color: #f0f8ff;
 }
 
 .footer {
@@ -118,8 +117,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: rgb(34, 32, 32); */
-    /* overflow: hidden; */
 }
 
 .outer-card {
@@ -164,7 +161,7 @@ body {
 
 .card h2 {
     text-align: center;
-    color: #fff;
+    color: #f0f8ff;
 }
 
 .button-container {
@@ -184,7 +181,7 @@ body {
     font-weight: 600;
     width: 90px;
     color: #5c2581;
-    background-color: #FAFAFF;
+    background-color: #f0f8ff;
     border: 2px solid #5c2581;
     border-radius: 5px;
 }
@@ -233,7 +230,6 @@ body {
 }
 
 ol {
-    /* width: fit-content; */
     padding-left: 0;
     margin: 0 auto;
 }
@@ -312,7 +308,3 @@ table {
     width: 90%;
     font-size: clamp(0.75rem, 0.623rem + 0.64vw, 1.1rem);
 }
-/* 
-.hidden {
-    display: none !important;
-} */
