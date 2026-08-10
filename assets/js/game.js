@@ -163,6 +163,13 @@ const calculateScore = () => {
 }
 
 prv.addEventListener("click", () => {
+  prv.classList.add("flash")
+  card.classList.add("flash")
+  setTimeout(() => {
+    prv.classList.remove("flash")
+    card.classList.remove("flash")
+  }, 250);
+
   if (gameEnd) {
     location.href = "index.html"
   }
@@ -173,8 +180,8 @@ prv.addEventListener("click", () => {
 })
 
 nxt.addEventListener("click", () => {
-    nxt.classList.add("flash")
-    card.classList.add("flash")
+  nxt.classList.add("flash")
+  card.classList.add("flash")
   setTimeout(() => {
     nxt.classList.remove("flash")
     card.classList.remove("flash")

@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: radial-gradient(circle at center top, rgb(42, 0, 87) 0%, rgb(24, 24, 24) 100%);
+    background: radial-gradient(circle at center top, #2a0057 0%, #181818 100%);
     font-family: "Roboto", sans-serif;
 }
 
@@ -174,7 +174,6 @@ body {
     transform: translateX(-50%);
     padding: 0 0.5rem;
     display: flex;
-    /* gap: 0.75rem; */
     background-color: rgb(30, 28, 28);
 }
 
@@ -182,6 +181,7 @@ body {
     position: relative;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    font-weight: 600;
     width: 90px;
     color: #5c2581;
     background-color: #FAFAFF;
@@ -189,7 +189,8 @@ body {
     border-radius: 5px;
 }
 
-#nxt.flash {
+#nxt.flash,
+#prv.flash {
     border: 1px solid #e018b5ab;
     color: #e018b5;
 }
@@ -218,6 +219,7 @@ body {
 #prv {
     transition: opacity 1s ease,
     transform 2s ease;
+    cursor: pointer;
 }
 
 #prv:disabled {

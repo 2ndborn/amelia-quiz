@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const games = document.querySelectorAll(".choice-container a");
   const para = document.querySelector("#overlay p");
   const links = document.querySelectorAll("a");
-  const clickSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3')
+  const clickSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3');
 
   const animationPromises = [];
 
@@ -103,10 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   links.forEach(link => {
-    link.addEventListener("click", () => {
-      clickSound.currentTime = 0;
-      clickSound.play();
-      console.log("clicked")
-    });
+  link.addEventListener("click", (e) => {
+    e.preventDefault(); // stop instant navigation
+
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    // allow the sound to begin before navigating
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 120); // 120ms is enough for browsers to start audio
   });
+});
+
 });
