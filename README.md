@@ -50,7 +50,7 @@ ___
 |Shocking Pink - #e018b5|-|-|✅|-|
 |Alice Blue - #f0f8ff|✅|✅||-|
 
-![Colour Scheme](./docs/assets/home.webp)
+![Colour Scheme](./readme-assets/zen_colors.webp)
 
 ### `Fonts`
 
