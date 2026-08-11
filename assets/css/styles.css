@@ -59,7 +59,7 @@ body {
     align-items: center;
     width: 120px;
     height: 120px;
-    background: f0f8ff;
+    background-image: linear-gradient(180deg, #f0f8ff  0%, #666a6d 100%);
     color: #5c2581;
     text-decoration: none;
     font-size: 3rem;
@@ -68,6 +68,7 @@ body {
 
 .choice-container a:hover {
     color: #e018b5;
+    background-image: linear-gradient(180deg, #f0f8ff  0%, #7a8086 100%);
 }
 
 .title {
