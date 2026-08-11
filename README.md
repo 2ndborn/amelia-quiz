@@ -58,11 +58,9 @@ Roboto
 
 ## Wireframes
 
-| Home | About me | Portfolio |
-
-|---|---|---|
-
-|![Home](./docs/assets/home.webp)|![About](./docs/assets/about.webp)|![Portfolio](./docs/assets/portfolio.webp)|
+| Home | Game |
+|---|---|
+|![Home](./readme-assets/wf_home.webp)|![Game](./readme-assets/wf_game.webp)|
 
 ## Technologies
 

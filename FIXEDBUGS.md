@@ -183,21 +183,21 @@ Benefits of the change:
 
 Absolutely — here’s a clean, professional **bug fix write‑up** you can drop straight into your README, commit message, or project documentation.
 
-### **Bug Fix: Click Sound Not Playing on Navigation**
+### Click Sound Not Playing on Navigation
 
-### **Issue Summary**
+#### Issue Summary
 
 The click sound effect stopped playing when users clicked on subject links. Although the audio file existed and loaded correctly, the sound never played during navigation.
 
-### **Root Cause**
+#### Root Cause
 
 Browsers block or cancel audio playback if a page begins navigating immediately after a click event. Because each subject link (`<a href="...">`) triggered an instant page load, the audio buffer never had time to start, resulting in silent failures with no console errors.
 
-### **Fix Implemented**
+#### Fix Implemented
 
 Navigation is now delayed briefly to allow the audio to begin playing before the page unloads.
 
-### **Solution Code**
+#### Solution Code
 
 js
 
@@ -217,7 +217,7 @@ links.forEach(link => {
 });
 ```
 
-### **Outcome**
+#### Outcome
 
 -   Click sound now plays consistently across all pages.
     
