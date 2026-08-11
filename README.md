@@ -1,34 +1,42 @@
+
 # Amelia-Quiz
 ## Mission statement
 This website is to support my daughters revision for GCSE's in addition to her schools tuition.
 ## User Stories
 ### `Navigation`
-I want to navigate between the main game options and the home screen, so I know where I am going.
+* I want to navigate between the main game options and the home screen, so I know where I am going.
+* I want to know which subject I have selected so that I know which quiz I am taking.
 ___
 ### `Home`
 * I want to see subject options, so I can make an infomed decision of what game to play
-
+* I want the available subjects to be clearly identifiable so that I can quickly choose a quiz.
+* I want visual feedback when hovering or selecting a subject so that I know it is interactive.
 ___
 
 ### `Game`
 
-- I want to have a home button, so I can easier get back to the home page.
-- I want to have a multiple choice of 4 questions, so I have options to pick the right answer.
-- I want to have a previous and next buttons to navigate between quesions, so I can navigate between questions.
-- I want to be able to see which question were correct/incorrect, so I know what areas to study.
-- I want to be able to replay when the game ends, so I can continue to learn.
+* I want to see which question I am currently answering so that I know my progress through the quiz.
+* I want to select one answer per question so that I can submit my response.
+* I want my selected answers to remain selected when moving between questions so that I can review my choices.
+* I want to see my final score when the quiz ends so that I can measure my performance.
+* I want a variety of questions to be presented each time I play so that the quiz remains engaging and educational.
 ___
 
 ### `General`
 
-* I want the app to function across multiple devices, so that I can access and use it without restrictions regardless of the device I'm on.
+* I want the application to be responsive on mobile, tablet, and desktop devices so that I can use it comfortably on any screen size.
+* I want buttons and interactive controls to remain usable on touch devices so that I can complete quizzes without difficulty.
 
 ## Future Features
 
-* Users will have the option to challenge themselves with count down mode.
-* Settings option, so users can:
-	* Switch the sound off.
-	* Switching game modes from 5 | 10 | 20 questions.
+`Timed Mode`
+
+-   As a user, I want to challenge myself with a countdown timer so that I can test my knowledge under pressure.
+
+`Settings`
+
+-   As a user, I want to turn sound effects on or off so that I can customise my experience.
+-   As a user, I want to choose the number of questions in a quiz so that I can play shorter or longer games.
 
 ## Colour & Typography
 
@@ -42,7 +50,7 @@ ___
 |Shocking Pink - #e018b5|-|-|✅|-|
 |Alice Blue - #f0f8ff|✅|✅||-|
 
-![Colour Scheme](./readme-assets/zen_colors.webp)
+![Colour Scheme](./docs/assets/home.webp)
 
 ### `Fonts`
 
@@ -307,7 +315,6 @@ links.forEach(link => {
     }, 120); // 120ms delay ensures reliable playback
   });
 });
-
 ```
 
 ### **Outcome**
@@ -349,4 +356,4 @@ GitHub is used to host the repository.
 #### 2. Go to settings 
 3. Under **code, planning, and automation** click on `Pages`.
 4.  Under **Build and deployment >Branch**  change `None` to `Main`, the press `Save`.
-5. You should see the live site address https://2ndborn.github.io/amelia-quiz/.# amelia-quiz
+5. You should see the live site address https://2ndborn.github.io/amelia-quiz/.
