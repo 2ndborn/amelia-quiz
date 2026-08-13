@@ -224,3 +224,71 @@ links.forEach(link => {
 -   Navigation still works smoothly with no visual delay.
     
 -   Audio playback is no longer cancelled by browser autoplay restrictions.
+
+## Subject** `<p>` Tag Not Rendering Inside Choice Button
+
+### **Issue**
+
+The subject label inside each game choice button (`<p class="subject">`) was not appearing on the page. Although the HTML structure was correct, the `<p>` element remained invisible.
+
+### **Root Cause**
+
+A global CSS selector was unintentionally hiding **all** `<p>` elements inside the `#overlay` container:
+
+css
+
+```
+#overlay p {
+    opacity: 0;
+}
+```
+
+Because the subject `<p>` lives inside:
+
+Code
+
+```
+#overlay
+  → .choice-container
+      → a
+          → p.subject
+```
+
+…it was still considered a descendant of `#overlay`, and therefore inherited `opacity: 0`, making it fully transparent.
+
+### **Fix**
+
+The solution was to **separate the styling concerns** by giving the intro paragraph its own class and removing the global rule that targeted every `<p>` inside `#overlay`.
+
+#### Updated CSS
+
+css
+
+```
+.subject {
+    margin: 1.25rem 0 0 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.intro {
+    color: #f0f8ff;
+    opacity: 0;
+}
+```
+
+#### Updated JS
+
+js
+
+```
+const para = document.querySelector(".intro");
+```
+
+### **Outcome**
+
+-   The subject label now renders correctly and is fully visible.
+    
+-   The intro paragraph remains hidden until animated.
+    
+-   CSS selectors are now scoped properly, preventing accidental styling conflicts.
