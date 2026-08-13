@@ -97,7 +97,7 @@ Roboto
 * Sound Effect by <a href="https://pixabay.com/users/dragon-studio-38165424/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=406644">DRAGON-STUDIO</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=406644">Pixabay</a>
 
 ## Fixed bugs
-[Click here to see the fixed bugs](./FIXEDBUGS.md)
+Click [here](./FIXEDBUGS.md) to see the fixed bugs.
 
 ## TESTING
 

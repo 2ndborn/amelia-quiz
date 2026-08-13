@@ -13,7 +13,7 @@ const resultBody = document.getElementById("result-body");
 const scoreHead = document.getElementById("score-head");
 const card = document.querySelector(".card");
 const h1 = document.querySelector("h1");
-const h2 = document.querySelector("h2");
+const questionsText = document.getElementById("questions-text");
 const quiz = document.getElementById("quiz");
 const homeBtn = document.querySelector("#home a");
 const clkSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3')
@@ -43,6 +43,7 @@ const sound = (snd) => {
   snd.play();
 }
 
+// starts the quiz
 const startQuiz = (quiz) => {
     h1.textContent = quiz.title
     currentData = quiz.questions
@@ -78,7 +79,7 @@ const replay = () => {
 }
 
 const update = () => {
-  h2.textContent = `${index + 1}. ${shuffled[index].question}`;
+  questionsText.textContent = `${index + 1}. ${shuffled[index].question}`;
   quiz.innerHTML = ""
 
   nxt.disabled = true;
@@ -90,6 +91,8 @@ const update = () => {
     input.type = "radio"
     input.name = "answer"
     input.value = i
+    input.id = `answer-${index}-${i}`
+    label.setAttribute("for", input.id)
     const text = document.createElement("span");
     text.textContent = opt
 

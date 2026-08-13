@@ -15,7 +15,10 @@
     </head>
     <body>
         <div id="home">
-            <a href="index.html">
+            <a
+                href="index.html"
+                aria-label="Go back to the home page"
+            >
                 <i class="fa-solid fa-house"></i>
             </a>
         </div>
@@ -25,8 +28,10 @@
         <div class="container">
             <div class="outer-card">
                 <div class="card">
-                    <h2></h2>
-                    <ol id="quiz"></ol>
+                    <fieldset>
+                        <legend id="questions-text"></legend>
+                        <ol id="quiz"></ol>
+                    </fieldset>
                     <div id="result" hidden>
                         <h3 id="score-head"></h3>
                         <table>
