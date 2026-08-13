@@ -149,7 +149,7 @@ const calculateScore = () => {
   
   const allCorrect = score === shuffled.length
   const percentage = (score / shuffled.length) * 100
-  h2.textContent = `Quiz Complete!`;
+  questionsText.textContent = `Quiz Complete!`;
   scoreHead.textContent = allCorrect ? `Perfect Score!!!` : `You scored ${score}/${shuffled.length}.`
   scoreHead.style.color = "#fff"
   scoreHead.style.margin = "16px 0"
@@ -205,11 +205,3 @@ nxt.addEventListener("click", () => {
 const buttons = document.querySelectorAll("button").forEach((btn) => {
   btn.addEventListener("click", () => sound(clkSound))
 })
-
-// homeBtn.addEventListener("mouseover", () => {
-//     homeBtn.textContent = "Home"
-// })
-
-// homeBtn.addEventListener("mouseout", () => {
-//     homeBtn.innerHTML = <i class="fa-solid fa-house"></i>
-// })

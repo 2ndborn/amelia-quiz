@@ -310,6 +310,11 @@ ol {
     backdrop-filter: blur(20px);
 }
 
+#score-head {
+    font-size: 1.2rem;
+    color: #f0f8ff;
+}
+
 #result {
     display: flex;
     justify-content: center;
