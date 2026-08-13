@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       {
         duration: 300,
-        delay: i * 300,
+        delay: i * 150,
         fill: "forwards",
         easing: "linear"
       }
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { filter: "drop-shadow(1px 5px 24px rgba(203, 73, 230, 0.8))" }
         ],
         {
-          duration: 1000,
+          duration: 300,
           fill: "forwards"
         }
       ).finished
