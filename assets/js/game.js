@@ -16,9 +16,9 @@ const h1 = document.querySelector("h1");
 const questionsText = document.getElementById("questions-text");
 const quiz = document.getElementById("quiz");
 const homeBtn = document.querySelector("#home a");
-const clkSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3')
-const liSound = new Audio('/assets/audio/ksjsbwuil-digital-click-3-513897.mp3')
-const finSound = new Audio('/assets/audio/dragon-studio-crowd-cheer-and-applause-406644 (1).mp3')
+const clkSound = new Audio('./assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3')
+const liSound = new Audio('./assets/audio/ksjsbwuil-digital-click-3-513897.mp3')
+const finSound = new Audio('./assets/audio/dragon-studio-crowd-cheer-and-applause-406644 (1).mp3')
 
 const params = new URLSearchParams(window.location.search);
 const quizName = params.get("quiz");

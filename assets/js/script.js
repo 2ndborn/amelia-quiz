@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const games = document.querySelectorAll(".choice-container a");
   const para = document.querySelector(".intro");
   const links = document.querySelectorAll("a");
-  const clickSound = new Audio('/assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3');
+  const clickSound = new Audio('./assets/audio/matthewvakaliuk73627-mouse-click-290204.mp3');
 
   const animationPromises = [];
 
