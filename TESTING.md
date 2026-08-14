@@ -1,6 +1,6 @@
 # Amelia-Quiz Testing
 Visit the deployed site: https://2ndborn.github.io/amelia-quiz/
-[Responsive](./readme-assets/zen_responsive.webp)
+![Responsive](./readme-assets/zen_responsive.webp)
 ---
 
 ## CONTENTS
@@ -25,9 +25,9 @@ Visit the deployed site: https://2ndborn.github.io/amelia-quiz/
 
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. It was also used to validate the CSS.
 
-* [Home Page]()
-* [Game Page]()
-* [Styles.css]()
+* [Home Page](./readme-assets/html_validator_home.webp)
+* [Game Page](./readme-assets/html_validator_game.webp)
+* [Styles.css](./readme-assets/css_validator.webp)
 - - -
 ### **Performance & Accessibility Testing**
 

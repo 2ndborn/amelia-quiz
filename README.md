@@ -1,6 +1,6 @@
 
 # Amelia-Quiz
-[Responsive](./readme-assets/zen_responsive.webp)
+![Responsive](./readme-assets/zen_responsive.webp)
 ## Mission statement
 This website is to support my daughters revision for GCSE's in addition to her schools tuition.
 ## User Stories
