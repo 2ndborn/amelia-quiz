@@ -102,7 +102,7 @@ Click [here](./FIXEDBUGS.md) to see the fixed bugs.
 
 ## TESTING
 
-Please click [here](../egbert/TESTING.md) to view application testing.
+Please click [here](./TESTING.md) to view application testing.
 
 ## LOCAL DEVELOPMENT
 
